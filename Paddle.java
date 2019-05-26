@@ -1,10 +1,9 @@
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
-public class Paddle implements KeyListener {
+public class Paddle{
    private Rectangle box;
    private boolean player1;
    private Color color;
@@ -24,33 +23,9 @@ public class Paddle implements KeyListener {
    public Rectangle getBox() {
       return box;
    }
-   
-   public void keyTyped(KeyEvent e) {
-   
-   }
-   
-   public void keyPressed(KeyEvent e) {
-      if (player1) {
-         if (e.getKeyCode() == KeyEvent.VK_W) {
-            box.y -= 5;
-         } else if (e.getKeyCode() == KeyEvent.VK_S) {
-            box.y += 5;
-         }
-      } else {
-         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            box.y -= 5;
-         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            box.y += 5;
-         }
 
-      }
-      
-   }
-
-   public void keyReleased(KeyEvent e) {
-   
-   }
-
-   
+   public void moveY(int Y) {
+	   box.y += Y; 
+   } 
 
 }
